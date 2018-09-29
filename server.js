@@ -49,6 +49,13 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Project Page',
+    projects: ['Notes-app', 'Weather-app', 'Node-web-server']
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Unable to handle request'
@@ -58,3 +65,8 @@ app.get('/bad', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
 });
+
+// new page projects with handlebar view
+// new link in header for projects page
+// commit + push github
+// push heroku remote: git push heroku
